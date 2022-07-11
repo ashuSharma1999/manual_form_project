@@ -228,7 +228,7 @@ e.preventDefault();
         />
         <input
           type="submit"
-          value="Submit"
+          value="Save"
           style={{
             margin: "1rem",
             padding: "5px",
