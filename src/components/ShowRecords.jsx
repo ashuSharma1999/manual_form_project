@@ -1,11 +1,22 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './showRecords.css'
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 const ShowRecords = (props) => {
   const [acceptId, setAcceptId] = useState([]);
   let data=props.acceptData
   // console.log(data)
+
+useEffect( ()=> {
+  loadUser();
+},[]);
+
+const loadUser = async (e) =>{
+  const result = await axios.get("http://localhost:3005/posts/");
+  
+}
+
 
   const getID = (id) => {
     // arrId.push(id);
@@ -107,7 +118,7 @@ const ShowRecords = (props) => {
               
              <tr className="recordCss">
                 <td>
-                  <input type="button" value="Edit" />
+                  <Link to ={`/edit/${i.id}`}> Edit</Link>
                 </td>
                 <td>
                 <input
