@@ -1,13 +1,22 @@
 import React from "react";
 
-const Dropdown = () => {
+
+const Dropdown = (props) => {
+  let optionsList = [];
+
+  if (props.dropdownData && props.dropdownData.length > 0) {
+    props.dropdownData.map((item) => {
+      let option = <option key={Math.trunc(Math.random()*100000)} value={item.value}>{item.name}</option>;
+      optionsList.push(option);
+    });
+  }
   return (
     <div>
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+      <label htmlFor="">{props.label}</label>
+      <br />
+      <select value={props.value} onChange={props.onChange}>
+        <option >select</option>
+        {optionsList}
       </select>
     </div>
   );

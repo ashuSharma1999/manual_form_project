@@ -1,9 +1,10 @@
 import React from 'react'
 
-const DatePicker = () => {
+const DatePicker = (props) => {
   return (
-    <div>
-        <input type="date" name="" id="" />
+    <div><label htmlFor={props.label}>{props.label}</label><br />
+        <input type={props.type} value={props.value} name={props.name} onChange={props.onChange} required={true}/>
+        
     </div>
   )
 }

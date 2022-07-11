@@ -1,0 +1,75 @@
+{
+  "posts": [
+    {
+      "Name": "abhishek",
+      "Company_Name": "crm",
+      "Gender": "Male",
+      "Ex_Employee": "Yes",
+      "Date_of_Birth": "2022-07-13",
+      "Date_of_Joining": "2022-07-20",
+      "Language": [
+        "C Language",
+        "Python"
+      ],
+      "Vehicles": [
+        "Bike"
+      ],
+      "State": "Chandigarh (UT)",
+      "id": 8
+    },
+    {
+      "Name": "ashu",
+      "Company_Name": "hgvshd",
+      "Gender": "Male",
+      "Ex_Employee": "Yes",
+      "Date_of_Birth": "2022-07-14",
+      "Date_of_Joining": "2022-07-13",
+      "Language": [
+        "C Language",
+        "Java"
+      ],
+      "Vehicles": [
+        "None",
+        "Car"
+      ],
+      "State": "Chandigarh (UT)",
+      "id": 9
+    },
+    {
+      "Name": "",
+      "Company_Name": "",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 10
+    },
+    {
+      "Name": "",
+      "Company_Name": "",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 11
+    },
+    {
+      "Name": "",
+      "Company_Name": "",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 12
+    }
+  ]
+}
