@@ -33,7 +33,8 @@ const Form = (props) => {
  
   // let finalData = [fData];
   // console.log(finalData);
-  const saveRecord = async () => {
+  const saveRecord = async (e) => {
+e.preventDefault();
     const store = await axios.post("http://localhost:3005/posts", fData);
     console.log(store.data);
     props.refresh();
@@ -46,6 +47,7 @@ const Form = (props) => {
     setLanguage([])
     setVehicle([])
     setPerson("")
+    setGetState('')
 
   };
 
@@ -138,7 +140,7 @@ const Form = (props) => {
         /> */}
         <Radio
           label="Select Gender"
-          name={gender}
+          name="Gender"
           v1="Male"
           v2="Female"
           v3="Other"
@@ -180,6 +182,7 @@ const Form = (props) => {
         <Checkbox
           label="Intrested Language"
           type="checkbox"
+          
           v1="React js"
           v2="Python"
           v3="C Language"

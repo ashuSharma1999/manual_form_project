@@ -70,6 +70,177 @@
       "Vehicles": [],
       "State": "",
       "id": 12
+    },
+    {
+      "Name": "as",
+      "Company_Name": "",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 13
+    },
+    {
+      "Name": "as",
+      "Company_Name": "as",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 14
+    },
+    {
+      "Name": "asas",
+      "Company_Name": "as",
+      "Gender": "Male",
+      "Ex_Employee": "Yes",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 15
+    },
+    {
+      "Name": "as",
+      "Company_Name": "as",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "2022-07-20",
+      "Date_of_Joining": "2022-07-13",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 16
+    },
+    {
+      "Name": "as",
+      "Company_Name": "as",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "2022-07-13",
+      "Date_of_Joining": "2022-07-20",
+      "Language": [
+        "Python",
+        "C Language"
+      ],
+      "Vehicles": [],
+      "State": "",
+      "id": 17
+    },
+    {
+      "Name": "",
+      "Company_Name": "",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 18
+    },
+    {
+      "Name": "as",
+      "Company_Name": "wd",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "1111-11-11",
+      "Date_of_Joining": "1111-11-11",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 19
+    },
+    {
+      "Name": "as",
+      "Company_Name": "asd",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "2022-07-13",
+      "Date_of_Joining": "2022-07-20",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 20
+    },
+    {
+      "Name": "",
+      "Company_Name": "",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 21
+    },
+    {
+      "Name": "as",
+      "Company_Name": "",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 22
+    },
+    {
+      "Name": "as",
+      "Company_Name": "as",
+      "Gender": "",
+      "Ex_Employee": "",
+      "Date_of_Birth": "",
+      "Date_of_Joining": "",
+      "Language": [],
+      "Vehicles": [],
+      "State": "",
+      "id": 23
+    },
+    {
+      "Name": "ashvin",
+      "Company_Name": "crmn",
+      "Gender": "Male",
+      "Ex_Employee": "Yes",
+      "Date_of_Birth": "2022-07-12",
+      "Date_of_Joining": "2022-07-12",
+      "Language": [
+        "C Language",
+        "Python"
+      ],
+      "Vehicles": [
+        "Bike",
+        "Car"
+      ],
+      "State": "Chandigarh (UT)",
+      "id": 30
+    },
+    {
+      "Name": "shashabsjhbjwq",
+      "Company_Name": "kjbskcj",
+      "Gender": "Male",
+      "Ex_Employee": "Yes",
+      "Date_of_Birth": "2022-07-12",
+      "Date_of_Joining": "2022-07-12",
+      "Language": [
+        "C Language",
+        "Python"
+      ],
+      "Vehicles": [
+        "Bike",
+        "Car"
+      ],
+      "State": "Chandigarh (UT)",
+      "id": 31
     }
   ]
 }
