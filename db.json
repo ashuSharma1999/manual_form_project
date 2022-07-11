@@ -1,19 +1,32 @@
 {
   "posts": [
     {
-      "id": 8,
-      "Name": "Abhi",
-      "Company_Name": "crm",
-      "Date_of_Birth": "2022-07-10",
-      "Date_of_Joining": "2022-07-13"
-    },
-    {
-      "Name": "ashu",
-      "Company_Name": "hgvshd",
+      "Name": "ashvini  sharma",
+      "Company_Name": "crmnext",
       "Gender": "Male",
       "Ex_Employee": "Yes",
-      "Date_of_Birth": "2022-07-14",
+      "Date_of_Birth": "2022-07-13",
       "Date_of_Joining": "2022-07-13",
+      "Language": [
+        "Python",
+        "C Language"
+      ],
+      "Vehicles": [
+        "Car",
+        "Bike"
+      ],
+      "State": "Kerala",
+      "District": "Kollam",
+      "Department": "Digital",
+      "id": 1
+    },
+    {
+      "Name": "Ashvini Sharma",
+      "Company_Name": "qweqe",
+      "Gender": "Male",
+      "Ex_Employee": "Yes",
+      "Date_of_Birth": "2022-07-06",
+      "Date_of_Joining": "2022-07-27",
       "Language": [
         "C Language",
         "Java"
@@ -22,44 +35,47 @@
         "None",
         "Car"
       ],
-      "State": "Chandigarh (UT)",
-      "id": 9
+      "State": "Uttar Pradesh",
+      "District": "Budaun",
+      "Department": "PDG",
+      "id": 2
     },
     {
-      "Name": "shashabsjhbjwq",
-      "Company_Name": "kjbskcj",
+      "Name": "wed",
+      "Company_Name": "tfgy",
       "Gender": "Male",
       "Ex_Employee": "Yes",
-      "Date_of_Birth": "2022-07-12",
-      "Date_of_Joining": "2022-07-12",
+      "Date_of_Birth": "2022-07-13",
+      "Date_of_Joining": "2022-07-19",
+      "Language": [
+        "C Language"
+      ],
+      "Vehicles": [
+        "Car"
+      ],
+      "State": "Jammu and Kashmir",
+      "District": "Baramulla",
+      "Department": "SDG",
+      "id": 3
+    },
+    {
+      "Name": "shashank",
+      "Company_Name": "crm",
+      "Gender": "Male",
+      "Ex_Employee": "Yes",
+      "Date_of_Birth": "2022-07-20",
+      "Date_of_Joining": "2022-08-02",
       "Language": [
         "C Language",
         "Python"
       ],
       "Vehicles": [
-        "Bike",
-        "Car"
+        "Bike"
       ],
-      "State": "Chandigarh (UT)",
-      "id": 31
-    },
-    {
-      "Name": "Ashvini Sharma",
-      "Company_Name": "CRMNEXT",
-      "Gender": "Male",
-      "Ex_Employee": "Yes",
-      "Date_of_Birth": "2022-07-10",
-      "Date_of_Joining": "2022-07-05",
-      "Language": [
-        "Python",
-        "C Language"
-      ],
-      "Vehicles": [
-        "Bike",
-        "Car"
-      ],
-      "State": "Gujarat",
-      "id": 32
+      "State": "Bihar",
+      "District": "Jamui",
+      "Department": "PDG",
+      "id": 4
     }
   ]
 }

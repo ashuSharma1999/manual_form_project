@@ -4,9 +4,10 @@ import React from "react";
 const Dropdown = (props) => {
   let optionsList = [];
 
+
   if (props.dropdownData && props.dropdownData.length > 0) {
     props.dropdownData.map((item) => {
-      let option = <option key={Math.trunc(Math.random()*100000)} value={item.value}>{item.name}</option>;
+      let option = <option key={Math.trunc(Math.random()*100)} value={item.value}>{item.name}</option>;
       optionsList.push(option);
     });
   }

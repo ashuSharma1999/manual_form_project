@@ -1,42 +1,35 @@
-import React,{useState,useEffect} from 'react'
-import './showRecords.css'
-import axios from 'axios';
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import "./showRecords.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ShowRecords = (props) => {
   const [acceptId, setAcceptId] = useState([]);
-  let data=props.acceptData
-  // console.log(data)
+  let data = props.acceptData;
 
-useEffect( ()=> {
-  loadUser();
-},[]);
+  useEffect(() => {
+    loadUser();
+  }, []);
 
-const loadUser = async (e) =>{
-  const result = await axios.get("http://localhost:3005/posts/");
-  
-}
-
+  const loadUser = async (e) => {
+    const result = await axios.get("http://localhost:3005/posts/");
+  };
 
   const getID = (id) => {
-    // arrId.push(id);
     setAcceptId((pre) => [...pre, id]);
   };
-  // console.log(acceptId);
 
   const deleteUser = async (acceptId) => {
-    console.log(acceptId);
     acceptId.forEach(async (id) => {
       console.info({ id });
       await axios.delete(`http://localhost:3005/posts/${id}`);
-      props.refresh()
+      props.refresh();
     });
-  }
+  };
 
-  
   return (
     <div>
-       <p>
+      <p>
         ----User Records---- <br />
         <input
           type="button"
@@ -44,11 +37,11 @@ const loadUser = async (e) =>{
           onClick={deleteUser.bind(null, acceptId)}
         />
       </p>
-      
-{data.map((i) => {
+
+      {data.map((i) => {
         return (
           <p>
-            <table className="recordCss" >
+            <table className="recordCss">
               <tr className="recordCss">
                 <td className="recordCss">
                   <label htmlFor="">Id</label>
@@ -67,7 +60,7 @@ const loadUser = async (e) =>{
                 </td>
                 <td className="recordCss">{i.Company_Name}</td>
               </tr>
-               <tr className="recordCss">
+              <tr className="recordCss">
                 <td className="recordCss">
                   <label htmlFor="">Ex-Employee</label>
                 </td>
@@ -85,8 +78,7 @@ const loadUser = async (e) =>{
                 </td>
                 <td className="recordCss">{i.Date_of_Joining} </td>
               </tr>
-              
-              
+
               <tr className="recordCss">
                 <td className="recordCss">
                   <label htmlFor="">Gender</label>
@@ -98,30 +90,39 @@ const loadUser = async (e) =>{
                 <td className="recordCss">
                   <label htmlFor="">Intrested Languages</label>
                 </td>
-                <td className="recordCss">{i.Language+" "}</td>
+                <td className="recordCss">{i.Language + " "}</td>
               </tr>
               <tr className="recordCss">
                 <td className="recordCss">
                   <label htmlFor="">Vehicles</label>
                 </td>
-                <td className="recordCss">{i.Vehicles+" "}</td>
+                <td className="recordCss">{i.Vehicles + " "}</td>
               </tr>
               <tr className="recordCss">
                 <td className="recordCss">
                   <label htmlFor="">State</label>
                 </td>
-                <td className="recordCss">
-                  {i.State}
-                </td>
+                <td className="recordCss">{i.State}</td>
               </tr>
-             
-              
-             <tr className="recordCss">
+              <tr className="recordCss">
+                <td className="recordCss">
+                  <label htmlFor="">District</label>
+                </td>
+                <td className="recordCss">{i.District}</td>
+              </tr>
+              <tr className="recordCss">
+                <td className="recordCss">
+                  <label htmlFor="">Department</label>
+                </td>
+                <td className="recordCss">{i.Department}</td>
+              </tr>
+
+              <tr className="recordCss">
                 <td>
-                  <Link to ={`/edit/${i.id}`}> Edit</Link>
+                  <Link to={`/edit/${i.id}`} style={{textDecoration:"none"}}> Edit</Link>
                 </td>
                 <td>
-                <input
+                  <input
                     type="checkbox"
                     name=""
                     value={i.id}
@@ -135,9 +136,8 @@ const loadUser = async (e) =>{
           </p>
         );
       })}
-
     </div>
-  )
-}
+  );
+};
 
-export default ShowRecords
+export default ShowRecords;

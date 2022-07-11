@@ -1,17 +1,17 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Checkbox from "./components/Checkbox";
 import DatePicker from "./components/DatePicker";
 import Dropdown from "./components/Dropdown";
 import Radio from "./components/Radio";
-import ShowRecords from "./components/ShowRecords";
 import Textbox from "./components/Textbox";
 import State from "./State.json";
+import Department from "./Department.json";
 
 const Form = (props) => {
   const [name, setName] = useState("");
   const [companyName, setCompanyName] = useState("");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState(" ");
   const [person, setPerson] = useState("");
   const [dob, setDob] = useState("");
   const [doj, setDoj] = useState("");
@@ -19,38 +19,57 @@ const Form = (props) => {
   const [vehicle, setVehicle] = useState([]);
   const [getState, setGetState] = useState("");
   const [district, setDistrict] = useState("");
+  const [department, setDepartment] = useState("");
   const fData = {
-    "Name": name,
-    "Company_Name": companyName,
-    "Gender": gender,
-    "Ex_Employee": person,
-    "Date_of_Birth": dob,
-    "Date_of_Joining": doj,
-    "Language": language,
-    "Vehicles": vehicle,
-    "State": getState,
+    Name: name,
+    Company_Name: companyName,
+    Gender: gender,
+    Ex_Employee: person,
+    Date_of_Birth: dob,
+    Date_of_Joining: doj,
+    Language: language,
+    Vehicles: vehicle,
+    State: getState,
+    District: district,
+    Department: department,
   };
- 
-  // let finalData = [fData];
-  // console.log(finalData);
-  const saveRecord = async (e) => {
-e.preventDefault();
-    const store = await axios.post("http://localhost:3005/posts", fData);
-    console.log(store.data);
-    props.refresh();
-    setName('')
-    setCompanyName("")
-    setDistrict("")
-    setDob("")
-    setDoj("")
-    setGender("")
-    setLanguage([])
-    setVehicle([])
-    setPerson("")
-    setGetState('')
 
+  const saveRecord = async (e) => {
+    if (
+      name === "" ||
+      companyName === "" ||
+      language === [] ||
+      vehicle === [] ||
+      getState === "" ||
+      gender === "" ||
+      person === "" ||
+      dob === "" ||
+      doj === "" ||
+      district === "" ||
+      department === ""
+    ) {
+      alert("Please fill the all Data");
+      e.preventDefault();
+    } else {
+      e.preventDefault();
+      const store = await axios.post("http://localhost:3005/posts", fData);
+
+      alert("Successfully save your records. ");
+      props.refresh();
+      setName("");
+      setCompanyName("");
+      setDistrict("");
+      setDob("");
+      setDoj("");
+      setGender(false);
+      setLanguage("");
+      setVehicle();
+      setPerson("");
+      setGetState("");
+      setDistrict("");
+      setDepartment("");
+    }
   };
-  
 
   const valueLanguage = (e) => {
     if (e.target.checked) {
@@ -66,27 +85,6 @@ e.preventDefault();
       setVehicle(vehicleArr);
     }
   };
-  // const RADIO_CONFIG = [
-  //   {
-  //     id: 1,
-  //     name: "Male",
-  //     value: "male",
-  //     onChange: setGender,
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Female",
-  //     value: "female",
-  //     onChange: setGender,
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Other",
-  //     value: "other",
-  //     onChange: setGender,
-  //   },
-  // ];
-  
 
   const statelist = () => {
     let drpData = [];
@@ -95,28 +93,43 @@ e.preventDefault();
     });
     return drpData;
   };
-  // console.log(statelist());
+  const departmemntlist = () => {
+    let departmentData = [];
+    Department.map((item) => {
+      departmentData.push({ name: item.name, value: item.name });
+    });
+    return departmentData;
+  };
+
   const districtlist = () => {
     if (!getState) return;
+    let drpDis = [];
     let ret = State.states.filter(({ state }) => getState === state);
-    let z = ret[0].districts;
-    return [{ name: z }];
+    let x = ret[0].districts.map((item) => {
+      drpDis.push({ name: item, value: item });
+    });
+    return drpDis;
   };
-  // console.log(districtlist());
 
+  let today = new Date();
+  let aaj = `${("0" + today.getFullYear()).slice(-4)}-${(
+    "0" +
+    (today.getMonth() + 1)
+  ).slice(-2)}-${("0" + today.getDate()).slice(-2)}`;
+  let pahle="1900-01-01";
   return (
     <div>
       <form action="">
-        <h3>Registration Form</h3>
+        <h2>Registration Form</h2>
 
         <Textbox
           labe="Name"
           name={name}
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)}
-          required={true} 
-          placeholder={"Enter your name"}
+          onChange={(e) => setName(e.target.value.replace(/[^a-z,' ']/gi, ""))}
+          required={true}
+          placeholder={"Enter your name only String"}
         />
 
         <Textbox
@@ -128,23 +141,12 @@ e.preventDefault();
           required={true}
           onChange={(e) => setCompanyName(e.target.value)}
         />
-        {/* <Radio label="Male" value={"male"} onChange={e => setGender(e.target.value)} /> */}
-        {/* <Radio  config={RADIO_CONFIG}/> */}
-        {/* <Radio
-          label="Gender"
-          name="Gender"
-          v1="Male"
-          v2="Female"
-          v3="Other"
-          type="radio"
-          onChange={(e) => setGender(e.target.value)}
-        /> */}
+
         <Radio
           label="Select Gender"
           name="Gender"
           v1="Male"
           v2="Female"
-          v3="Other"
           type="radio"
           value={gender}
           required={true}
@@ -168,6 +170,8 @@ e.preventDefault();
           required={true}
           name={dob}
           value={dob}
+          aaj={aaj}
+          pahle={pahle}
           onChange={(e) => {
             setDob(e.target.value);
           }}
@@ -177,17 +181,19 @@ e.preventDefault();
           type="date"
           required={true}
           name={doj}
+          pahle={pahle}
           value={doj}
+          aaj={aaj}
           onChange={(e) => setDoj(e.target.value)}
         />
         <Checkbox
           label="Intrested Language"
           type="checkbox"
-          
           v1="React js"
           v2="Python"
           v3="C Language"
           v4="Java"
+          name={language}
           value={language}
           required={true}
           onChange={(e) => {
@@ -202,7 +208,7 @@ e.preventDefault();
           v2="Bike"
           v3="Car"
           v4="None"
-          value={language}
+          value={vehicle}
           onChange={(e) => {
             valueVehicle(e);
           }}
@@ -227,6 +233,16 @@ e.preventDefault();
             setDistrict(e.target.value);
           }}
         />
+        <Dropdown
+          label="Select Department"
+          type="checkbox"
+          value={department}
+          required={true}
+          dropdownData={departmemntlist()}
+          onChange={(e) => {
+            setDepartment(e.target.value);
+          }}
+        />
         <input
           type="submit"
           value="Save"
@@ -238,8 +254,7 @@ e.preventDefault();
           }}
           onClick={saveRecord}
         />
-        </form>
-      
+      </form>
     </div>
   );
 };

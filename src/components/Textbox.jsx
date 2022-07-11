@@ -3,9 +3,17 @@ import React from "react";
 const Textbox = (props) => {
   return (
     <>
-            <label htmlFor={props.label}>{props.labe}</label><br />
-            <input type={props.type} name={props.name} value={props.value} onChange={props.onChange} required={true} placeholder={props.placeholder}/><br />
-    
+      <label htmlFor={props.label}>{props.labe}</label>
+      <br />
+      <input
+        type={props.type}
+        name={props.name}
+        value={props.value}
+        onChange={props.onChange}
+        required={true}
+        placeholder={props.placeholder}
+      />
+      <br />
     </>
   );
 };
