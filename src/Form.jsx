@@ -50,6 +50,7 @@ e.preventDefault();
     setGetState('')
 
   };
+  
 
   const valueLanguage = (e) => {
     if (e.target.checked) {
@@ -237,7 +238,7 @@ e.preventDefault();
           }}
           onClick={saveRecord}
         />
-      </form>
+        </form>
       
     </div>
   );
